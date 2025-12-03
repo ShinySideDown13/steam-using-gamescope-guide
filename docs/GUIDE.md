@@ -303,9 +303,9 @@ In this case, a dummy script will be created that will echo 'no updates configur
 
   > `mkdir ~/Developer`
 
-* Using the code editor, create a new file called `jupier-biosupdate` in the `Developer` folder, add the following lines to the file and then save the file
+* Using the code editor, create a new file called `jupiter-biosupdate` in the `Developer` folder, add the following lines to the file and then save the file
 
-  > `~/Developer/jupier-biosupdate`
+  > `~/Developer/jupiter-biosupdate`
   >
   > ---
   >
@@ -315,9 +315,9 @@ In this case, a dummy script will be created that will echo 'no updates configur
   >
   > `exit 0;`
 
-* This part is optional, but is useful to ensure the right environment is set when running the script to exit immediately on error. Using the code editor, create a new file called `jupier-biosupdate` in the `Developer/steamos-polkit-helpers` folder, add the following lines to the file and then save the file
+* This part is optional, but is useful to ensure the right environment is set when running the script to exit immediately on error. Using the code editor, create a new file called `jupiter-biosupdate` in the `Developer/steamos-polkit-helpers` folder, add the following lines to the file and then save the file
 
-  > `~/Developer/steamos-polkit-helpers/jupier-biosupdate`
+  > `~/Developer/steamos-polkit-helpers/jupiter-biosupdate`
   >
   > ---
   >
