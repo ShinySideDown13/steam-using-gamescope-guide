@@ -371,7 +371,7 @@ In this case, a dummy script will be created that will exit with code 7 back to 
   >
   > `exec /usr/bin/steamos-update "$0"`
 
-* Uisng the terminal, set the permissions of the scripts with execute and copy them to the following
+* Using the terminal, set the permissions of the scripts with execute and copy them to the following
 
   > `chmod +x ~/Developer/steamos-update`
 
