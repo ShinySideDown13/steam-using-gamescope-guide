@@ -339,7 +339,53 @@ In this case, a dummy script will be created that will echo 'no updates configur
 
   > `sudo cp ~/Developer/steamos-polkit-helpers/jupiter-biosupdate /usr/bin/steamos-polkit-helpers/`
 
-### 8. Create a helper script to stop unecessary system updates in SteamOS mode
+### 8. Create a helper script to stop unecessary dock updates in SteamOS mode
+
+Dock updates are relevant for devices powered by SteamOS. This is not required for other Linux distributions.
+
+In this case, a dummy script will be created that will echo 'no updates configured for this bios' and exit with code 0 back to inform the Steam Client that dock updates are not required.
+
+* (If it does not exist already) create a `Developer` folder in your `HOME` location using a file manager or from the command line as follows
+
+  > `mkdir ~/Developer`
+
+* Using the code editor, create a new file called `jupiter-dock-updater` in the `Developer` folder, add the following lines to the file and then save the file
+
+  > `~/Developer/jupiter-dock-updater`
+  >
+  > ---
+  >
+  > `#!/bin/bash`
+  >
+  > `echo "No updates configured for this bios"`
+  >
+  > `exit 0;`
+
+* This part is optional, but is useful to ensure the right environment is set when running the script to exit immediately on error. Using the code editor, create a new file called `jupiter-dock-updater` in the `Developer/steamos-polkit-helpers` folder, add the following lines to the file and then save the file
+
+  > `~/Developer/steamos-polkit-helpers/jupiter-dock-updater`
+  >
+  > ---
+  >
+  > `#!/bin/bash`
+  >
+  > `set -eu`
+  >
+  > `exec /usr/bin/jupiter-dock-updater "$0"`
+
+* From the terminal, set the permissions of the scripts with execute, and copy them to the following
+
+  > `chmod +x ~/Developer/gamescope-session`
+
+  > `sudo cp ~/Developer/gamescope-session /usr/bin/`
+
+  Optionally, copy the polkit helper script
+
+  > `chmod +x ~/Developer/steamos-polkit-helpers/jupiter-dock-updater`
+
+  > `sudo cp ~/Developer/steamos-polkit-helpers/jupiter-dock-updater /usr/bin/steamos-polkit-helpers/`
+
+### 9. Create a helper script to stop unecessary system updates in SteamOS mode
 
 System updates are relevant for devices powered by SteamOS, but again is not required for other Linux distributions.
 
@@ -383,7 +429,7 @@ In this case, a dummy script will be created that will exit with code 7 back to 
 
   > `sudo cp ~/Developer/steamos-polkit-helpers/steamos-update /usr/bin/steamos-polkit-helpers/`
 
-### 9. Create a helper script to set the SteamOS branch required for the Steam Client
+### 10. Create a helper script to set the SteamOS branch required for the Steam Client
 
 For devices powered by SteamOS, preview or beta branches can be chosen for testing. This is not required for other Linux distributions.
 
@@ -409,7 +455,7 @@ In this case, a dummy script will be created that will echo 'Not applicable for 
   >
   > `sudo cp ~/Developer/steamos-select-branch /usr/bin/`
 
-### 10. Create a helper script for 'Switch to Desktop' feature to work
+### 11. Create a helper script for 'Switch to Desktop' feature to work
 
 Nearly there. There is an option in SteamOS mode to 'Switch to Desktop'. On devices powered by SteamOS, this is a handy feature to access a full desktop experience.
 
@@ -437,7 +483,7 @@ To mimmic this on other Linux distributions, a dummy script will be created that
   >
   > `sudo cp ~/Developer/steamos-session-select /usr/bin/`
 
-### 11. Run through Steam Deck set up
+### 12. Run through Steam Deck set up
 
 Run through the set up process by:
 
